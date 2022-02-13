@@ -29,7 +29,7 @@
 			</ul>
 
 			<footer class="footer">
-				<p>Copyright {{ infos }} 2019</p>
+				<p>{{ copyright }}</p>
 			</footer>
 		</div>
 
@@ -44,8 +44,10 @@
 					adress: '18 avenue du Beurre, Paris, France'
 				},
 				computed: {
-					infos(){
-						return this.restaurantName + " " + this.numTel + " " + this.email + " " + this.adress;
+					copyright() {
+						const currentYear = new Date().getFullYear()
+
+						return `Copyright ${this.restaurantName} ${currentYear}`
 					}
 				}
 			})
